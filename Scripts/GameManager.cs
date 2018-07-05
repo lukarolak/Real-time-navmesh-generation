@@ -8,9 +8,33 @@ public class GameManager : MonoBehaviour {
 	public enum LogTier{
 		Log,Success,Fail,Warning,Error
 	};
+	[System.Serializable]
+	public struct KeyBinds{
+		public KeyCode Up;
+		public KeyCode Down;
+		public KeyCode Left;
+		public KeyCode Right;
+		public int ClickRight; //0 left,1 right, 2 middle
+	}
+	public static KeyBinds _KeyBindsSettings;
+	[System.Serializable]
+	public struct GameSettingsStruct{
+		public float MapScrollSpeed;
+	}
+	public static GameSettingsStruct _GameSettings;
+	public GameSettingsStruct GameSettings;
+	public KeyBinds KeyBindsSettings;
+	public enum GameStates{
+		Game
+	};
+	public static GameStates _GameState;
+
 	// Use this for initialization
 	void Start () {
 		_EnableDeveloperLogs = EnableDeveloperLogs;
+		_KeyBindsSettings = KeyBindsSettings;
+		_GameSettings = GameSettings;
+		_GameState = GameStates.Game;
 	}
 	
 	// Update is called once per frame
