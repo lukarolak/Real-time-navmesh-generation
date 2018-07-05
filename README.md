@@ -1,6 +1,10 @@
 ### This is an open-source Unity game that will achieve its goals with the help of contributors
-Planned features:
+Current features:
 * Randomly generated map
+
+  * Realtime generated navmesh - [writeup](https://medium.com/@DeveloperLuka/unity-runtime-navmesh-generation-adf32255c71c)
+Planned features:
+* Build system
 * AI factions
 * Real life like economy
 
