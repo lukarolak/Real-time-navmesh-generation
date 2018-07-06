@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour {
 	public static bool _EnableDeveloperLogs;
 	public bool EnableDeveloperLogs = true;
+	public static GameObject _ScriptHolder;
 	public enum LogTier{
 		Log,Success,Fail,Warning,Error
 	};
@@ -28,18 +29,20 @@ public class GameManager : MonoBehaviour {
 		Game
 	};
 	public static GameStates _GameState;
+	public static bool _EnableDynamicNavMeshGeneration;
 
 	// Use this for initialization
 	void Start () {
+		_EnableDynamicNavMeshGeneration = false;
 		_EnableDeveloperLogs = EnableDeveloperLogs;
 		_KeyBindsSettings = KeyBindsSettings;
 		_GameSettings = GameSettings;
 		_GameState = GameStates.Game;
+		_ScriptHolder = gameObject;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
 	}
 	public static void Log(string Message, LogTier Tier = LogTier.Log){
 		if(_EnableDeveloperLogs == false)

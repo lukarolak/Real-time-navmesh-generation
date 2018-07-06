@@ -7,6 +7,15 @@ public class TerrainProperties : MonoBehaviour {
 	public struct TerrainCharacteristic{
 		public bool Walkable;
 		public bool Mineable;
+		public List<TerrainEvolution> TerrainLevels;
+	}
+	[System.Serializable]
+	public struct TerrainEvolution{
+		public TerrainOpertations Operation;
+		public GameObject LevelObject;
+	}
+	public enum TerrainOpertations{
+		Mine
 	}
 	// Use this for initialization
 	void Start () {

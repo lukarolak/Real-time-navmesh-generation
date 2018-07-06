@@ -5,12 +5,14 @@ using UnityEngine.AI;
 public class TerrainGenerator : MonoBehaviour {
 	public int GridSize = 10;
 	public GameObject[] TerrainObjects;
-	private GameObject WalkableTerrainHolder;
+	public GameObject WalkableTerrainHolder;
+	public int NavMeshGenerationCalls = 0;
 	// Use this for initialization
 	void Start () {
 		GameManager.Log("Creating Grid");
 		GenerateGrid();
 		GameManager.Log("Creating Grid -> SUCCESS",GameManager.LogTier.Success);
+		//GameManager._EnableDynamicNavMeshGeneration = true;
 	}
 	
 	// Update is called once per frame
@@ -40,7 +42,8 @@ public class TerrainGenerator : MonoBehaviour {
 		}
 		return WalkableTerrain;
 	}
-	void RegenerateNavMesh(){
+	public void RegenerateNavMesh(){
 		WalkableTerrainHolder.GetComponent<NavMeshSurface>().BuildNavMesh();
+		NavMeshGenerationCalls++;
 	}
 }
