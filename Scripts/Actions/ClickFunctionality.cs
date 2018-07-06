@@ -21,7 +21,6 @@ public class ClickFunctionality : MonoBehaviour {
 						Task.Destination = Hit.transform;
 						Task.TaskList = TaskManager.TaskListEnum.Mine;
 						TaskManager.TaskQueue.Add(Task);
-						GameManager.Log("Mine task added");
 					}
 				}
 		}
