@@ -12,7 +12,8 @@ public class TaskHolder : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(Task.TaskList != TaskManager.TaskListEnum.Idle){
-			gameObject.GetComponent<NavMeshAgent>().SetDestination(Task.Destination.position);
+			if(Task.Destination != null)
+				gameObject.GetComponent<NavMeshAgent>().SetDestination(Task.Destination.position);
 		}
 		if(Task.Destination == null){
 			Task.TaskList = TaskManager.TaskListEnum.Idle;

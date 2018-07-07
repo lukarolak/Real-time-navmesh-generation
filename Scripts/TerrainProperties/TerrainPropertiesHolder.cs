@@ -20,6 +20,8 @@ public class TerrainPropertiesHolder : MonoBehaviour {
 		foreach(TerrainProperties.TerrainEvolution TerrainInfo in TerrainCharacteristic.TerrainLevels){
 			if(TerrainInfo.Operation == Operation){
 				Instantiate(TerrainInfo.LevelObject,gameObject.transform.position,Quaternion.identity);
+				if(TerrainInfo.ParticleEffect != null)
+					Instantiate(TerrainInfo.ParticleEffect,gameObject.transform.position,Quaternion.identity);
 				Destroy(gameObject);
 			}
 		}
