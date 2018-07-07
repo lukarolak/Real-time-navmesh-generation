@@ -13,6 +13,7 @@ public class TerrainProperties : MonoBehaviour {
 	public struct TerrainEvolution{
 		public TerrainOpertations Operation;
 		public GameObject LevelObject;
+		public GameObject ParticleEffect;
 	}
 	public enum TerrainOpertations{
 		Mine
