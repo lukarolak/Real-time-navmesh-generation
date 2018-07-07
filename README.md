@@ -1,4 +1,7 @@
 ### This is an open-source Unity game that will achieve its goals with the help of contributors
+
+See [version history](https://github.com/lukarolak/That-Unity-project/wiki/Version-history) for the current asset package.
+
 **Current features:**
 * Randomly generated map
 
@@ -11,8 +14,6 @@
 
 ***
 All scripts can be found on this repository, Asset packages are being uploaded to [Google drive](https://drive.google.com/drive/folders/1TdKbqoXSJM_Ob3aApAwYdPo8NrYAttHR?usp=sharing).
-
-See [version history](https://github.com/lukarolak/That-Unity-project/wiki/Version-history) for the current asset package.
 
 If you want to talk to me, feel free to do so on: thatunityproject@gmail.com
 ***
