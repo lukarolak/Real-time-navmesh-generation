@@ -7,6 +7,7 @@ public class TerrainGenerator : MonoBehaviour {
 	public GameObject[] TerrainObjects;
 	public GameObject WalkableTerrainHolder;
 	public int NavMeshGenerationCalls = 0;
+	public GameObject Player;
 	// Use this for initialization
 	void Start () {
 		GameManager.Log("Creating Grid");
@@ -33,6 +34,7 @@ public class TerrainGenerator : MonoBehaviour {
 		WalkableTerrainHolder.AddComponent<NavMeshSurface>();
 		WalkableTerrainHolder.GetComponent<NavMeshSurface>().collectObjects = CollectObjects.Children;
 		RegenerateNavMesh();
+		SpawnPlayer();
 	}
 	List<int> FindWalkableTerrain(){
 		List<int> WalkableTerrain = new List<int>();
@@ -45,5 +47,8 @@ public class TerrainGenerator : MonoBehaviour {
 	public void RegenerateNavMesh(){
 		WalkableTerrainHolder.GetComponent<NavMeshSurface>().BuildNavMesh();
 		NavMeshGenerationCalls++;
+	}
+	public void SpawnPlayer(){
+		Instantiate(Player,WalkableTerrainHolder.transform.GetChild(Random.Range(0,WalkableTerrainHolder.transform.childCount-1)).transform.position,Quaternion.identity);
 	}
 }

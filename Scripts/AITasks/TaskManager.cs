@@ -10,6 +10,11 @@ public class TaskManager : MonoBehaviour {
 	public struct TaskType{
 		public TaskListEnum TaskList;
 		public Transform Destination;
+		public int PlayerID;
+	}
+	public struct MinionProperties{
+		public int PlayerID;
+		public TaskListEnum WorkStatus;
 	}
 	public static List<TaskType> TaskQueue = new List<TaskType>();
 	// Use this for initialization
@@ -22,13 +27,12 @@ public class TaskManager : MonoBehaviour {
 			if(TaskQueue[0].TaskList == TaskListEnum.Mine){
 				GameObject[] Miners = GameObject.FindGameObjectsWithTag("Miner");
 				foreach(GameObject Miner in Miners){
-					if(Miner.GetComponent<TaskHolder>().Task.TaskList == TaskListEnum.Idle){
+					if(Miner.GetComponent<TaskHolder>().Task.TaskList == TaskListEnum.Idle && Miner.GetComponent<TaskHolder>().Properties.PlayerID == TaskQueue[0].PlayerID){
 						Miner.GetComponent<TaskHolder>().Task = TaskQueue[0];
 						TaskQueue.RemoveAt(0);
 						break;
 					}
 				}
-				print("LeftTasks"+TaskQueue.Count.ToString());
 			}
 		}
 	}
