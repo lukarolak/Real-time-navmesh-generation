@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour {
 	[System.Serializable]
 	public struct GameSettingsStruct{
 		public float MapScrollSpeed;
+		public int NumberOfPlayers;
 	}
 	public static GameSettingsStruct _GameSettings;
 	public GameSettingsStruct GameSettings;

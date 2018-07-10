@@ -20,6 +20,7 @@ public class ClickFunctionality : MonoBehaviour {
 						TaskManager.TaskType Task;
 						Task.Destination = Hit.transform;
 						Task.TaskList = TaskManager.TaskListEnum.Mine;
+						Task.PlayerID = 0;
 						TaskManager.TaskQueue.Add(Task);
 					}
 				}
